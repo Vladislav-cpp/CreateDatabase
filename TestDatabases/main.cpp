@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
     miscUtils::RefactoringStringCSVFile( csvFile, refactoringCSVFile, s_sFileProperty );
 
     // 1.C
-    std::vector< std::vector<std::string> > data;
+    QVector< QVector<QString>> data;
     data.reserve(s_iLinesNumber);
     miscUtils::ExtrsctionDataFromSCVFile(csvFile, s_sFileProperty, data);
 
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
     query.prepare("INSERT INTO my_table (data1, data2, data3, data4, data5, data6)"
                   "VALUES (:data1, :data2, :data3, :data4, :data5, :data6)");
 
-    std::vector< QString > values{ {":data1"}, {":data2"}, {":data3"}, {":data4"}, {":data5"}, {":data6"} };
+    QVector< QString > values{ {":data1"}, {":data2"}, {":data3"}, {":data4"}, {":data5"}, {":data6"} };
     for(int i = 0; i< s_iLinesNumber; ++i) {
         for(int j = 0; j< s_iColumnsNumber; ++j) {
 
