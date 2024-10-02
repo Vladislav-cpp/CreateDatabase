@@ -1,8 +1,8 @@
 #ifndef TMISCUTILS_H
 #define TMISCUTILS_H
 
-#include <string>
-#include <vector>
+#include <QString>
+#include <QVector>
 
 class QFile;
 
@@ -17,14 +17,14 @@ namespace miscUtils {
 
     bool СheckFileOpen(const QFile& file);
 
-    std::string GenerateRandomString(int length );
+    QString GenerateRandomString(int length );
 
     bool IsVowel(char ch);
 
     void FillRandomStringCSVFile(QFile& file, const SCSVFileProperty& fileProperty);
     void RefactoringStringCSVFile(QFile& originalFile, QFile& destinationFile, const SCSVFileProperty& fileProperty);
-    void ExtrsctionDataFromSCVFile(QFile& scvFile, const SCSVFileProperty& fileProperty, std::vector< std::vector<std::string> >& data);
+    void ExtrsctionDataFromSCVFile(QFile& scvFile, const SCSVFileProperty& fileProperty, QVector<QVector<QString> >& data);
 
-    std::vector<std::string> ParseCSV(const std::string& input);
+    QVector<QString> ParseCSV(QString& input);
 }
 #endif // TMISCUTILS_H
